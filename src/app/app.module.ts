@@ -23,6 +23,8 @@ import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { MenuComponent } from './components/menu/menu.component';
 import { DynamicDatabase } from './components/menu/dinamicdatabase.service';
+import { MydataComponent } from './components/mydata/mydata.component';
+import { HomeComponent } from './components/home/home.component';
 
 
 
@@ -36,6 +38,8 @@ import { DynamicDatabase } from './components/menu/dinamicdatabase.service';
     SidebarComponent,
     MainNavComponent,
     MenuComponent,
+    MydataComponent,
+    HomeComponent,
   ],
   imports: [
     BrowserModule,
