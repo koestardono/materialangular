@@ -5,9 +5,11 @@ import { LogInComponent } from './components/log-in/log-in.component';
 import { MydataComponent } from './components/mydata/mydata.component';
 import { RegisterComponent } from './components/register/register.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
+import { AuthGuard } from './_helpers/auth.guard';
 
 const routes: Routes = [
-  { path: '', pathMatch: 'full', redirectTo: 'home' },
+  // { path: '', pathMatch: 'full', redirectTo: 'home'},
+  { path: '', component: HomeComponent, canActivate: [AuthGuard] },
   { path: 'login', component: LogInComponent },
   { path: 'register', component: RegisterComponent },
   { path: 'sidebar', component: SidebarComponent },
@@ -39,8 +41,8 @@ const routes: Routes = [
   },
   {
     path: 'home',
-    component: HomeComponent
-  }
+    component: HomeComponent,
+  },
 ];
 
 @NgModule({

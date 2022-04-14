@@ -22,9 +22,13 @@ import { RegisterComponent } from './components/register/register.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { DynamicDatabase } from './components/menu/dinamicdatabase.service';
 import { MydataComponent } from './components/mydata/mydata.component';
 import { HomeComponent } from './components/home/home.component';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './_helpers/jwt.interceptor';
+import { ErrorInterceptor } from './_helpers/error.interceptor';
+import { fakeBackendProvider } from './_helpers/fake-backend';
+import { AlertComponent } from './_components/alert.component';
 
 
 
@@ -40,6 +44,7 @@ import { HomeComponent } from './components/home/home.component';
     MenuComponent,
     MydataComponent,
     HomeComponent,
+    AlertComponent
   ],
   imports: [
     BrowserModule,
@@ -49,9 +54,14 @@ import { HomeComponent } from './components/home/home.component';
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
+    HttpClientModule
   ],
   providers: [
-    DynamicDatabase
+    {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
+    {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+
+    // provider used to create fake backend
+    fakeBackendProvider
   ],
   bootstrap: [AppComponent],
   schemas: [CUSTOM_ELEMENTS_SCHEMA],

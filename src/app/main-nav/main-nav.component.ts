@@ -2,6 +2,8 @@ import { Component, Input } from '@angular/core';
 import { BreakpointObserver, Breakpoints } from '@angular/cdk/layout';
 import { Observable } from 'rxjs';
 import { map, shareReplay } from 'rxjs/operators';
+import { AuthenticationService } from '../_services/authentication.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-main-nav',
@@ -150,7 +152,10 @@ export class MainNavComponent {
     );
   database: any;
 
-  constructor(private breakpointObserver: BreakpointObserver) {}
+  constructor(
+    private breakpointObserver: BreakpointObserver,
+    private authenticationService: AuthenticationService,
+    private router: Router) {}
 
   // tslint:disable-next-line:use-lifecycle-interface
   // ngOnInit(): void {
@@ -160,6 +165,11 @@ export class MainNavComponent {
   // tslint:disable-next-line:typedef
   showInfo() {
     alert('tes');
+  }
+
+  logout() {
+    this.authenticationService.logout();
+    this.router.navigate(['/login']);
   }
 
   // tslint:disable-next-line:typedef

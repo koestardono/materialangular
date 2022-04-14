@@ -24,6 +24,8 @@
     "@angular/router": "~12.2.16",
     "angular-base64": "^2.0.5",
     "base64-js": "^1.5.1",
+    "idlejs": "^3.0.0",
+    "ng2-simple-timer": "^11.2.9",
     "ngx-permissions": "^13.0.1",
     "rxjs": "~6.5.5",
     "rxjs-compat": "^6.6.7",
