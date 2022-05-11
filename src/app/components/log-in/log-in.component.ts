@@ -16,6 +16,7 @@ export class LogInComponent implements OnInit {
   loading = false;
   submitted = false;
   returnUrl: string;
+  hide = true;
 
   constructor(
     private formBuilder: FormBuilder,

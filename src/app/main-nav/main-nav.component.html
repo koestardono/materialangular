@@ -21,7 +21,7 @@
     <mat-menu #animals="matMenu">
       <div *ngFor="let menuts of menu.children">
         <!-- <button mat-menu-item [matMenuTriggerFor]="vertebrates">{{menuts.name}}</button> -->
-        <button mat-menu-item routerLink="{{menu.url}}">{{menuts.name}}</button>
+        <button mat-menu-item routerLink="{{menuts.url}}">{{menuts.name}}</button>
       </div>
       <!-- <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button>
       <button mat-menu-item [matMenuTriggerFor]="vertebrates">Vertebrates</button> -->

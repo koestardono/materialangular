@@ -1,0 +1,10 @@
+.main-div{
+  height: 10vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.example-container .mat-form-field + .mat-form-field {
+  margin-left: 8px;
+}

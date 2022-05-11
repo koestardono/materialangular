@@ -187,4 +187,8 @@ export class MainNavComponent {
       });
     }
   }
+
+  valueClick(value) {
+    console.log(value);
+  }
 }

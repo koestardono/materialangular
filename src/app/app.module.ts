@@ -5,6 +5,8 @@ import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 
+const APP_CONTAINERS = [MainNavComponent];
+
 /* Angular Material */
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { AngularMaterialModule } from './angular-material.module';
@@ -22,13 +24,13 @@ import { RegisterComponent } from './components/register/register.component';
 import { SidebarComponent } from './components/sidebar/sidebar.component';
 import { MainNavComponent } from './main-nav/main-nav.component';
 import { MenuComponent } from './components/menu/menu.component';
-import { MydataComponent } from './components/mydata/mydata.component';
 import { HomeComponent } from './components/home/home.component';
 import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { JwtInterceptor } from './_helpers/jwt.interceptor';
 import { ErrorInterceptor } from './_helpers/error.interceptor';
 import { fakeBackendProvider } from './_helpers/fake-backend';
 import { AlertComponent } from './_components/alert.component';
+import { MyprofileComponent } from './components/mydata/myprofile/myprofile.component';
 
 
 
@@ -42,9 +44,11 @@ import { AlertComponent } from './_components/alert.component';
     SidebarComponent,
     MainNavComponent,
     MenuComponent,
-    MydataComponent,
     HomeComponent,
-    AlertComponent
+    AlertComponent,
+
+    //  My Data
+    MyprofileComponent
   ],
   imports: [
     BrowserModule,
@@ -54,7 +58,7 @@ import { AlertComponent } from './_components/alert.component';
     ReactiveFormsModule,
     FormsModule,
     FlexLayoutModule,
-    HttpClientModule
+    HttpClientModule,
   ],
   providers: [
     {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
